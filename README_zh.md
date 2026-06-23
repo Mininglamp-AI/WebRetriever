@@ -1,12 +1,12 @@
 <h1 align="center">🌐 WebRetriever: 用于高效网络智能体评估的大规模综合基准</h1>
 <p align="center">
-<a href="https://github.com/hhhhhhalf/WebRetriever">📃 论文</a>
+<a href="https://github.com/mininglamp-ai/WebRetriever">📃 论文</a>
 •
-<a href="https://hhhhhhalf.github.io/WebRetriever/">🏆 排行榜</a>
+<a href="https://mininglamp-ai.github.io/WebRetriever/">🏆 排行榜</a>
 •
-<a href="https://github.com/hhhhhhalf/WebRetriever">🤗 数据 (即将发布)</a>
+<a href="https://github.com/mininglamp-ai/WebRetriever">🤗 数据 (即将发布)</a>
 •
-🔤 <a href="https://github.com/hhhhhhalf/WebRetriever/blob/main/README.md">English</a> | 中文
+🔤 <a href="https://github.com/mininglamp-ai/WebRetriever/blob/main/README.md">English</a> | 中文
 </p>
 
 ## 💡 动机
