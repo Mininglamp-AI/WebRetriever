@@ -804,17 +804,14 @@
                         <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; padding: 10px 0;">
                           ${podiumOrder.map(({ data: row, style: s }) => {
                             const agent = podiumAgent(row);
-                            const autoScore = !isNaN(row.autoAvg) && currentProtocol !== 'Protocol III' ? `<div style="color: #888; font-size: 0.82em; margin-top: 6px;">Auto: ${row.autoAvg.toFixed(1)}%</div>` : '';
                             return `<div style="flex: 1; max-width: ${s.maxW}; min-width: 180px; background: ${s.bg}; border: ${s.border}; border-top: ${s.borderTop}; border-radius: 16px; padding: 30px 22px 26px; text-align: center; box-shadow: ${s.shadow}; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); cursor: default; position: relative;"
                               onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='${s.shadowHover}'"
                               onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='${s.shadow}'">
                               <div style="width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; background: ${s.medalBg}; display: flex; align-items: center; justify-content: center; font-size: ${s.medalSize}; box-shadow: ${s.medalShadow};">${s.medal}</div>
                               ${agent ? `<div style="font-size: 0.78em; color: #999; margin-bottom: 3px; letter-spacing: 0.3px;">${agent}</div>` : ''}
-                              <div style="font-weight: 700; font-size: 1.08em; color: #1a1a2e; margin-bottom: 2px;">${row.Model || ''}</div>
-                              <div style="font-size: 0.72em; color: #aaa; margin-bottom: 18px; letter-spacing: 0.2px;">${row.Institution || ''}</div>
+                              <div style="font-weight: 700; font-size: 1.08em; color: #1a1a2e; margin-bottom: 18px;">${row.Model || ''}</div>
                               <div style="font-weight: 800; font-size: ${s.scoreSize}; color: ${s.scoreColor}; font-variant-numeric: tabular-nums; letter-spacing: -0.5px; line-height: 1;">${row.humanAvg.toFixed(1)}%</div>
                               <div style="color: ${s.labelColor}; font-size: 0.75em; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 6px;">Human Eval</div>
-                              ${autoScore}
                               ${row.PaperLink ? `<a href="${row.PaperLink}" target="_blank" style="display: inline-block; margin-top: 12px; color: #3273dc; font-size: 0.72em; text-decoration: none; opacity: 0.55; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">\u{1F4C4} ${row.PaperAuthors || 'Paper'}</a>` : ''}
                             </div>`;
                           }).join('')}
