@@ -630,11 +630,11 @@
                     <p style="margin: 0; font-size: 0.95em; font-weight: 600;">(2) <strong style="color: #2563eb;">Protocol II</strong> &mdash; <strong style="color: #2563eb;">Assesses navigation performance when provided with operational knowledge.</strong></p>
                     <p style="margin: 0; font-size: 0.95em; font-weight: 600;">(3) <strong style="color: #2563eb;">Protocol III</strong> &mdash; <strong style="color: #2563eb;">Measures end-to-end task completion by jointly evaluating navigation and information extraction, avoiding the limitation of equating page arrival with task success.</strong></p>
                     <p style="margin: 8px 0 0 0; font-size: 0.9em; color: #555;">For Protocols I and II, we maintain both human-verified success rates and NavEval automated success rates. For Protocol III, since it evaluates end-to-end task completion (including information extraction), only human-verified success rates are reported.</p>
-                    <div style="margin: 12px 0 0 0; padding: 12px 15px; background: #e8f4fd; border: 1px solid #bee5eb; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                    <!-- <div style="margin: 12px 0 0 0; padding: 12px 15px; background: #e8f4fd; border: 1px solid #bee5eb; border-radius: 8px; border-left: 4px solid #17a2b8;">
                       <p style="margin: 0; font-size: 0.9em; color: #0c5460;">
                         <strong>📌 Note:</strong> The Protocol III evaluation set has been expanded from the original 50 tasks (as reported in the paper) to 100 tasks for more comprehensive assessment. As a result, Protocol III scores on this leaderboard may differ from those reported in the paper.
                       </p>
-                    </div>
+                    </div> -->
                   </div>
                   <div style="margin-bottom: 15px;"></div>
                     <h4 style="margin-bottom: 10px;">Auto Evaluation:</h4>
@@ -786,9 +786,9 @@
                         .slice(0, 3);
                       
                       const podiumStyles = [
-                        { borderColor: '#f0c040', medal: '\u{1F947}', shadow: 'rgba(240,192,64,0.25)', maxW: '300px', scoreSize: '1.8em', medalSize: '2.4em' },
-                        { borderColor: '#b0b0b0', medal: '\u{1F948}', shadow: 'rgba(176,176,176,0.2)', maxW: '260px', scoreSize: '1.5em', medalSize: '2em' },
-                        { borderColor: '#cd7f32', medal: '\u{1F949}', shadow: 'rgba(205,127,50,0.2)', maxW: '260px', scoreSize: '1.5em', medalSize: '2em' }
+                        { bg: 'linear-gradient(160deg, #fffef7 0%, #fff8e1 40%, #fff3cc 100%)', border: '1px solid rgba(240,192,64,0.2)', borderTop: '4px solid #f0c040', medal: '\u{1F947}', shadow: '0 8px 32px rgba(240,192,64,0.15), 0 2px 8px rgba(0,0,0,0.05)', shadowHover: '0 14px 44px rgba(240,192,64,0.25), 0 4px 12px rgba(0,0,0,0.08)', maxW: '300px', scoreSize: '2.2em', scoreColor: '#b8860b', medalSize: '1.8em', medalBg: 'linear-gradient(135deg, #ffe066, #f0c040)', medalShadow: '0 4px 14px rgba(240,192,64,0.35)', labelColor: '#b8960b' },
+                        { bg: 'linear-gradient(160deg, #fafbfd 0%, #f2f4f8 100%)', border: '1px solid rgba(0,0,0,0.06)', borderTop: '4px solid #b0b8c4', medal: '\u{1F948}', shadow: '0 6px 24px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.03)', shadowHover: '0 10px 36px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.05)', maxW: '260px', scoreSize: '1.7em', scoreColor: '#4a5568', medalSize: '1.5em', medalBg: 'linear-gradient(135deg, #e2e8f0, #b0b8c4)', medalShadow: '0 4px 14px rgba(0,0,0,0.1)', labelColor: '#8892a0' },
+                        { bg: 'linear-gradient(160deg, #fefaf6 0%, #f8efe4 100%)', border: '1px solid rgba(205,127,50,0.12)', borderTop: '4px solid #cd7f32', medal: '\u{1F949}', shadow: '0 6px 24px rgba(205,127,50,0.1), 0 2px 6px rgba(0,0,0,0.03)', shadowHover: '0 10px 36px rgba(205,127,50,0.18), 0 4px 10px rgba(0,0,0,0.05)', maxW: '260px', scoreSize: '1.7em', scoreColor: '#8b6914', medalSize: '1.5em', medalBg: 'linear-gradient(135deg, #e8b87a, #cd7f32)', medalShadow: '0 4px 14px rgba(205,127,50,0.25)', labelColor: '#a08050' }
                       ];
                       
                       const podiumAgent = (row) => row.Agent && row.Agent !== '\u{2014}' ? row.Agent : '';
@@ -801,19 +801,21 @@
                       ] : [];
                       
                       const podiumHTML = podiumOrder.length === 3 ? `
-                        <div style="display: flex; gap: 18px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; padding: 10px 0;">
                           ${podiumOrder.map(({ data: row, style: s }) => {
                             const agent = podiumAgent(row);
-                            const autoScore = !isNaN(row.autoAvg) && currentProtocol !== 'Protocol III' ? `<div style="color: #888; font-size: 0.85em; margin-top: 4px;">Auto: ${row.autoAvg.toFixed(1)}%</div>` : '';
-                            return `<div style="flex: 1; max-width: ${s.maxW}; min-width: 180px; background: #fff; border-top: 5px solid ${s.borderColor}; border-radius: 12px; padding: 22px 18px; text-align: center; box-shadow: 0 4px 20px ${s.shadow}; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px ${s.shadow}'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px ${s.shadow}'">
-                              <div style="font-size: ${s.medalSize}; margin-bottom: 8px;">${s.medal}</div>
-                              ${agent ? `<div style="font-size: 0.8em; color: #999; margin-bottom: 2px;">${agent}</div>` : ''}
-                              <div style="font-weight: 700; font-size: 1.1em; color: #222; margin-bottom: 2px;">${row.Model || ''}</div>
-                              <div style="font-size: 0.75em; color: #aaa; margin-bottom: 14px;">${row.Institution || ''}</div>
-                              <div style="font-weight: 700; font-size: ${s.scoreSize}; color: #222; font-variant-numeric: tabular-nums; margin-bottom: 4px;">${row.humanAvg.toFixed(1)}%</div>
-                              <div style="color: #888; font-size: 0.8em;">Human Eval</div>
+                            const autoScore = !isNaN(row.autoAvg) && currentProtocol !== 'Protocol III' ? `<div style="color: #888; font-size: 0.82em; margin-top: 6px;">Auto: ${row.autoAvg.toFixed(1)}%</div>` : '';
+                            return `<div style="flex: 1; max-width: ${s.maxW}; min-width: 180px; background: ${s.bg}; border: ${s.border}; border-top: ${s.borderTop}; border-radius: 16px; padding: 30px 22px 26px; text-align: center; box-shadow: ${s.shadow}; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); cursor: default; position: relative;"
+                              onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='${s.shadowHover}'"
+                              onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='${s.shadow}'">
+                              <div style="width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; background: ${s.medalBg}; display: flex; align-items: center; justify-content: center; font-size: ${s.medalSize}; box-shadow: ${s.medalShadow};">${s.medal}</div>
+                              ${agent ? `<div style="font-size: 0.78em; color: #999; margin-bottom: 3px; letter-spacing: 0.3px;">${agent}</div>` : ''}
+                              <div style="font-weight: 700; font-size: 1.08em; color: #1a1a2e; margin-bottom: 2px;">${row.Model || ''}</div>
+                              <div style="font-size: 0.72em; color: #aaa; margin-bottom: 18px; letter-spacing: 0.2px;">${row.Institution || ''}</div>
+                              <div style="font-weight: 800; font-size: ${s.scoreSize}; color: ${s.scoreColor}; font-variant-numeric: tabular-nums; letter-spacing: -0.5px; line-height: 1;">${row.humanAvg.toFixed(1)}%</div>
+                              <div style="color: ${s.labelColor}; font-size: 0.75em; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 6px;">Human Eval</div>
                               ${autoScore}
-                              ${row.PaperLink ? `<a href="${row.PaperLink}" target="_blank" style="display: inline-block; margin-top: 10px; color: #3273dc; font-size: 0.75em; text-decoration: none; opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">\u{1F4C4} ${row.PaperAuthors || 'Paper'}</a>` : ''}
+                              ${row.PaperLink ? `<a href="${row.PaperLink}" target="_blank" style="display: inline-block; margin-top: 12px; color: #3273dc; font-size: 0.72em; text-decoration: none; opacity: 0.55; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">\u{1F4C4} ${row.PaperAuthors || 'Paper'}</a>` : ''}
                             </div>`;
                           }).join('')}
                         </div>
