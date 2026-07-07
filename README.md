@@ -217,7 +217,7 @@ output/
 
 ### 5. NavEval Evaluation
 
-NavEval provides automated evaluation of agent trajectories with approximately 90% human agreement.
+NavEval provides automated evaluation of agent trajectories with 91.2% human agreement.
 
 #### Run
 
