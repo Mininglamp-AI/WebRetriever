@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# Runtime files
+sandbox_list.json
+sandbox_list.txt
+logs/
+test_results/
+
+# IDE
+.vscode/
+.idea/

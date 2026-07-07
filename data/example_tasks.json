@@ -1,0 +1,20 @@
+[
+    {
+        "task_idx": 0,
+        "task_id": "f0fe04a2e725413097e7ea64c4fd2f5f",
+        "website": "https://zh.ifixit.com/",
+        "task": "查看\"iPad Air 3\"的屏幕更换(Screen Replacement)指南。"
+    },
+    {
+        "task_idx": 1,
+        "task_id": "bc4bb867038b4f1e8be763f09665bb1f",
+        "website": "https://tongji.baidu.com",
+        "task": "请查看百度统计Demo站点中，最近30天上海地区使用计算机的新访客的每日浏览量 (PV) 趋势图。"
+    },
+    {
+        "task_idx": 2,
+        "task_id": "8c0f8ec8fa6c4f53ac23d88ead246490",
+        "website": "https://www.nstl.gov.cn",
+        "task": "将关于\"树莓派\"的第一篇中文文献添加到导出列表，并进入导出列表查看。"
+    }
+]
