@@ -10,12 +10,6 @@ __pycache__/
 # macOS
 .DS_Store
 
-# Runtime files
-sandbox_list.json
-sandbox_list.txt
-logs/
-test_results/
-
 # IDE
 .vscode/
 .idea/
