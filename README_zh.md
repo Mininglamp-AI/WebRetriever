@@ -1,6 +1,6 @@
 <h1 align="center">🌐 WebRetriever：用于高效网络智能体评估的大规模综合基准</h1>
 <p align="center">
-<a href="https://github.com/Mininglamp-AI/WebRetriever">📃 论文</a>
+<a href="https://arxiv.org/abs/2607.06118">📃 论文</a>
 •
 <a href="https://mininglamp-ai.github.io/WebRetriever/">🏆 排行榜</a>
 •
@@ -253,6 +253,20 @@ NavEval 分为两个阶段：
 
 `main.py` 任务调度器通常不需要修改 —— 它负责多进程调度、浏览器生命周期管理、截图采集和结果保存。
 
+## 📖 引用
+
+如果 WebRetriever 对您的研究有帮助，请考虑引用我们的论文：
+
+```bibtex
+@inproceedings{dong2026webretriever,
+  title={WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation},
+  author={Dong, Wei and Fu, Tianyu and Yu, Zhe and Wang, Hanning and Su, Anyang and Fang, Zhizhou and Chen, Yuyang and Wang, Shuo and Wu, Minghui and Jiang, Ping and Lei, Zhen and Zhao, Chenxu},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}
+```
+
 ## 📜 许可证
 
 本项目基于 [MIT 许可证](LICENSE) 发布。
+

@@ -1,6 +1,6 @@
 <h1 align="center">🌐 WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation</h1>
 <p align="center">
-<a href="https://github.com/Mininglamp-AI/WebRetriever">📃 Paper</a>
+<a href="https://arxiv.org/abs/2607.06118">📃 Paper</a>
 •
 <a href="https://mininglamp-ai.github.io/WebRetriever/">🏆 Leaderboard</a>
 •
@@ -252,6 +252,22 @@ The provided `src/agent/` is a reference implementation based on UI-TARS 1.5. To
 **Customize `web_controller.py`** — Extend browser control if your model uses a different action space.
 
 The `main.py` task runner generally does not need modification — it handles multi-process scheduling, browser lifecycle, screenshot capture, and result saving.
+
+## 📖 Citation
+
+If you find WebRetriever useful for your research, please consider citing our paper:
+
+```bibtex
+@misc{dong2026webretrieverlargescalecomprehensivebenchmark,
+    title={WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation}, 
+    author={Wei Dong and Tianyu Fu and Zhe Yu and Hanning Wang and Anyang Su and Zhizhou Fang and Yuyang Chen and Shuo Wang and Minghui Wu and Ping Jiang and Zhen Lei and Chenxu Zhao},
+    year={2026},
+    eprint={2607.06118},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2607.06118}, 
+}
+```
 
 ## 📜 License
 
