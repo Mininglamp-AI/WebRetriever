@@ -258,11 +258,14 @@ NavEval 分为两个阶段：
 如果 WebRetriever 对您的研究有帮助，请考虑引用我们的论文：
 
 ```bibtex
-@inproceedings{dong2026webretriever,
-  title={WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation},
-  author={Dong, Wei and Fu, Tianyu and Yu, Zhe and Wang, Hanning and Su, Anyang and Fang, Zhizhou and Chen, Yuyang and Wang, Shuo and Wu, Minghui and Jiang, Ping and Lei, Zhen and Zhao, Chenxu},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2026}
+@misc{dong2026webretrieverlargescalecomprehensivebenchmark,
+    title={WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation}, 
+    author={Wei Dong and Tianyu Fu and Zhe Yu and Hanning Wang and Anyang Su and Zhizhou Fang and Yuyang Chen and Shuo Wang and Minghui Wu and Ping Jiang and Zhen Lei and Chenxu Zhao},
+    year={2026},
+    eprint={2607.06118},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2607.06118}, 
 }
 ```
 
