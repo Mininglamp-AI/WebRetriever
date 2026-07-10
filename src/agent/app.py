@@ -44,7 +44,6 @@ if model_type == "qwen3_vl":
         model_path,
         attn_implementation="flash_attention_2",
         torch_dtype=torch.bfloat16,
-        use_cache=True,
         device_map="auto",
     )
 else:
@@ -53,7 +52,6 @@ else:
         model_path,
         attn_implementation="flash_attention_2",
         torch_dtype=torch.bfloat16,
-        use_cache=True,
         device_map="auto",
     )
 model.eval()
