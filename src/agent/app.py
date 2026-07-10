@@ -42,7 +42,7 @@ if model_type == "qwen3_vl":
     from transformers import Qwen3VLForConditionalGeneration
     model = Qwen3VLForConditionalGeneration.from_pretrained(
         model_path,
-        attn_implementation="flash_attention_2",
+        # attn_implementation="flash_attention_2",
         torch_dtype=torch.bfloat16,
         device_map="auto",
     )
@@ -50,7 +50,7 @@ else:
     from transformers import Qwen2_5_VLForConditionalGeneration
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
         model_path,
-        attn_implementation="flash_attention_2",
+        # attn_implementation="flash_attention_2",
         torch_dtype=torch.bfloat16,
         device_map="auto",
     )
@@ -107,19 +107,21 @@ async def chat_completions(request: Request):
         image_base64 = None
         text_prompt = ""
         
-        # Preparation for inference
-        text = processor.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
-        
+        # 先转换 OpenAI 格式 (image_url) -> Qwen 格式 (image)
         for i, message in enumerate(messages):
+            if not isinstance(message.get("content"), list):
+                continue
             for index in range(len(message["content"])):
-                if messages[i]["content"][index]["type"] == "image_url":
+                if messages[i]["content"][index].get("type") == "image_url":
                     messages[i]["content"][index]["type"] = "image"
                     image_base64 = messages[i]["content"][index]["image_url"]["url"]
                     del messages[i]["content"][index]["image_url"]
                     messages[i]["content"][index]["image"] = image_base64
 
+        # Preparation for inference
+        text = processor.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
 
         image_inputs, video_inputs = process_vision_info(messages)
         
