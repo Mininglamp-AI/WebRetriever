@@ -21,7 +21,7 @@ SCRIBE_TOKEN=""          # Scribe API access token (用于 formatter 阶段访�
 MODEL="claude-sonnet-4-5"
 
 # ====== 运行 ======
-SCRIBE_TOKEN="$SCRIBE_TOKEN" python "$SCRIPT_DIR/../src/eval/naveval.py" \
+SCRIBE_TOKEN="$SCRIBE_TOKEN" python ../src/eval/naveval.py \
     --mode "$MODE" \
     --max-workers "$MAX_WORKERS" \
     --api-key "$API_KEY" \

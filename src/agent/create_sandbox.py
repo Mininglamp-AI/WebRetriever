@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser(description="创建 AGS 浏览器沙箱")
     parser.add_argument("--num", type=int, default=4, help="沙箱数量")
     parser.add_argument("--template", type=str, default="template")
-    parser.add_argument("--timeout", type=int, default=3600)
+    parser.add_argument("--timeout", type=int, default=36000)
     parser.add_argument("--region", type=str, default=None)
     parser.add_argument("--output", type=str, default="sandbox_list.json")
     args = parser.parse_args()

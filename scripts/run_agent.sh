@@ -29,8 +29,7 @@ VLM_PORTS="8001 8002 8003 8004 8005 8006 8007 8008"
 # VLM_PORTS=""
 
 # ====== 启动 ======
-cd "$PROJECT_DIR/src/agent"
-python main.py \
+python ../src/agent/main.py \
     --input "$INPUT" \
     --output "$OUTPUT" \
     --cdp_url "${CDP_URLS[@]}" \

@@ -27,7 +27,7 @@ for i in "${!gpu_ids[@]}"; do
     echo "启动服务：GPU $gpu → 端口 $port，日志输出到 $log_file"
     
     # 方法1：使用 nohup 确保进程持续运行
-    CUDA_VISIBLE_DEVICES=$gpu nohup python3 "$PROJECT_DIR/src/agent/app.py" -p $port > $log_file 2>&1 &
+    CUDA_VISIBLE_DEVICES=$gpu nohup python3 ../src/agent/app.py -p $port > $log_file 2>&1 &
     
     # 记录进程ID
     pid=$!
