@@ -320,7 +320,7 @@ def eval_task(dir_path, save_base_dir):
         task = task.split("### key points")[0]
     url_trajectory = list(dict.fromkeys(result_data.get("urls")))
 
-    image_list = os.listdir(f'{dir_path}/trajectory')
+    image_list = sorted(os.listdir(f'{dir_path}/trajectory'), key=lambda x: int(x.split('.')[0]))
     last_img = f"{dir_path}/trajectory/{image_list[-1]}"
     with open(last_img, "rb") as f:
         screenshot_b64 = base64.b64encode(f.read()).decode("utf-8")
